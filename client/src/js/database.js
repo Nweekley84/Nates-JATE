@@ -1,52 +1,53 @@
-import { openDB } from 'idb';
+import { openDB } from "idb";
 
 const initdb = async () =>
-  openDB('jate', 1, {
+  openDB("jate", 1, {
     upgrade(db) {
-      if (db.objectStoreNames.contains('jate')) {
-        console.log('jate database already exists');
+      if (db.objectStoreNames.contains("jate")) {
+        console.log("jate database already exists");
         return;
       }
-      db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
-      console.log('jate database created');
+      db.createObjectStore("jate", { keyPath: "id", autoIncrement: true });
+      console.log("jate database created");
     },
   });
 
+// TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
-  console.log('Put to the Database');
+  console.log("putDb implemented");
 
-  // Create a connection to the database database and version we want to use.
-  const contactDb = await openDB('jate', 1);
+  //open database to name transaction
+  const jateDb = await openDB("jate", 1);
+  //name transaction to know what store
+  const tx = jateDb.transaction("jate", "readwrite");
+  //open store to make transaction
+  const store = tx.objectStore("jate");
+  //execute transaction
+  const request = store.put({ content: content });
 
-  // Create a new transaction and specify the database and data privileges.
-  const tx = contactDb.transaction('jate', 'readwrite');
-
-  // Open up the desired object store.
-  const store = tx.objectStore('jate');
-
-  const request = store.put({id: 1,value: content});
+  //confrim transaction has been made
   const result = await request;
-  console.log('Saved to Database', result);
+  console.log("Content saved to Db", result);
 };
-
+// TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
-  console.log('Get to the Database')
+  console.log("getDb implemented");
 
-  // Create a connection to the database database and version we want to use.
-  const contactDb = await openDB('jate', 1);
-
-  // Create a new transaction and specify the database and data privileges.
-  const tx = contactDb.transaction('jate', 'readonly');
-
-  // Open up the desired object store.
-  const store = tx.objectStore('jate');
-
-  // Use the .getAll() method to get all data in the database.
+  //open database to name transaction
+  const jateDb = await openDB("jate", 1);
+  //name type of transaction for store
+  const tx = jateDb.transaction("jate", "readonly");
+  //open store
+  const store = tx.objectStore("jate");
+  //execute transaction
   const request = store.get(1);
 
-  // // Get confirmation of the request.
+  //check to confirm
   const result = await request;
-  console.log('result.value', result);
+  result
+    ? console.log("data retreived from DB")
+    : console.log("data not retreived");
+
   return result?.value;
 };
 

@@ -1,66 +1,43 @@
-# PWA-text-Editor
-This a text editor that runs on any web browser with (PWA). A progressive web app (PWA) is a website that looks and behaves as if it is a mobile app. PWAs are built to take advantage of native mobile device features, without requiring the end user to visit an app store, make a purchase and download software locally.  The application will also function offline.
+# PWATextEditor
 
-## Table of Content
+## Description
 
-  - [Feature](#feature)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Credits](#credits)
-  - [License](#license)
+My motivation for creating this app was to be able to create a Manifest, service worker, and bundle code to create an offline app
 
-## Feature
+I built this app in order to practice my ability to config webpack files, service files and to actually download and install an app that works offline.
 
-Serves as a text with PWA that you can use the the text-editor offline
+I learned how to navigate and trouble through the types of errors that could come up when working with service workers and webpackaging.
 
 ## Installation
 
-Step 1: Clone the repo (HTTPS: `git clone https://github.com/Nweekley84/NATES-JATE.git` or SSH: `git@github.com:Nweekley84/NATES-JATE.git`)
+What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
-Step 2: Install Node.js
+1.  We are going to first go to our heroku site.
 
-Step 3: npm start (install all components from the package.json)
+    https://textpwaeditor-da39821b88be.herokuapp.com/
+
+1.  In the top Left corner you can hit install and use as a PWA or use on the browser.
+
+1.  Type away!
+
+1.  if you would like to clone the repository and check out the code please feel free to check out the repo
+
+    https://github.com/shadowfre4k/PWATextEditor
 
 ## Usage
 
+Check out the Manifest in the application tab of the develooper tools
+![Manifest](/Develop/assets/Screenshot%201.png)
 
-### Screenshot
+Check out the service worker in the application tab of the develooper tools
+![ServiceWorker](/Develop/assets/Screenshot%202.png)
 
-1. List of npm commands
+Check out the IndexDb in the application tab of the develooper tools
+![IndexDB](/Develop/assets/Screenshot%203.png)
 
-         * npm start:dev - Start both client and server concurrently
-         * npm start - Start server and cilent
-         * npm server - Start server only
-         * npm build - Build client only
-         * npm client - Start client only
+Downloaded as a PWA
+![PWA](/Develop/assets/Screenshot%204.png)
 
-![screenshot1](./Screenshots/screenshot1.png)
+## Contact
 
-2. Building Progress
-
-![screenshot2](./Screenshots/screenshot2.png)
-
-3. A "dist" folder will be created inside the client folder, including all frontend components into different bundle files
-
-![screenshot3](./Screenshots/screenshot3.png)
-
-4. Enter anything you want into the text-editor
-
-![screenshot4](./Screenshots/screenshot4.png)
-
-5. All text are stored as indexdb call "jate".
-
-![screenshot5](./Screenshots/screenshot5.png)
-
-6. Lastly, after you install the PWA you can use it offline as seperate application
-
-![screenshot6](./Screenshots/screenshot6.png)
-
-
-
-## Credits
-
-Github, express.js(npm), if-env(npm), babel-loader(npm), css-loader(npm), html-webpack-plugin (npm), http-server(npm), style-loader(npm), webpack (npm), webpack-cli (npm), webpack-dev-server (npm), webpack-pwa-manifest (npm), workbox-webpack-plugin (npm)
-
-## License
-[MIT License - Copyright (c) 2022 Louie Ip](./LICENSE)
+Please feel free to contact me
