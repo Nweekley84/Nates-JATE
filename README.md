@@ -1,5 +1,7 @@
 # Just Another Text Editor (J.A.T.E)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Description
 
 My motivation for creating this app was to be able to create a Manifest, service worker, and bundle code to create an offline app
